@@ -1,0 +1,49 @@
+@import "../../styles/_mixins.scss";
+
+.layout{
+    position: relative;
+    background: #F5F5F7;
+    height: 100vh;
+    padding-left: 80px;
+    padding-top: 133px;
+    >div:last-child{
+        width: 26%;
+        position: fixed;
+        background: #ffffff;
+        top: 0;
+        bottom: 0;
+        right: 0;
+
+        @include md{
+            width: 30%;
+        }
+
+        @include xl{
+            width: 25%;
+        }
+
+        @include xxl{
+            width: 26%;
+        }
+    }
+
+    @include xs{
+        padding-top: 136px;
+        padding-left: 0;
+        padding-right: 0;
+
+        > div:last-child{
+            display: none;
+        }
+    }
+
+    @include xl{
+        padding-left: 40px;
+    }
+
+    @include xxl {
+        padding-left: 80px;
+        padding-top: 133px;
+    }
+}
+

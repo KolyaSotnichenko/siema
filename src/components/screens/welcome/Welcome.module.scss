@@ -1,0 +1,166 @@
+@import "../../../styles/_mixins.scss";
+
+.wrapper{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding-left: 5%;
+    padding-right: 5%;
+    z-index: 2;
+
+    @include xs{
+        flex-direction: column;
+        padding-left: 16px;
+        padding-right: 16px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    @include sm{
+        flex-direction: column;
+        padding-left: 24px;
+        padding-right: 24px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    @include md{
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @include xl{
+        align-items: center;
+        padding-left: 10%;
+        padding-right: 10%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    @include xxl{
+        justify-content: center;
+    }
+}
+
+.background{
+    height: 100vh;
+    background-color: #fff;
+
+    &::after{
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+        background-color: #004974;
+        opacity: 0.05;
+
+        @include xs{
+            background-color: #FFF3EB;
+            opacity: 1;
+        }
+    }
+}
+
+
+.handIcon{
+    width: 624px;
+    height: 367px;
+
+    @include xs{
+        width: 288px;
+        height: 192px;
+        margin-top: 80px;
+    }
+
+    @include sm{
+        width: 480px;
+        margin-top: 30%;
+    }
+
+    @include md{
+        margin-top: 0;
+    }
+
+    @include lg{
+        height: 367;
+    }
+
+    @include xl{
+        width: 624px;
+        margin-top: 0;
+    }
+
+    @include xxl{
+        height: 367px;
+        margin-top: 0;
+    }
+    
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 64px;
+
+    @include xs {
+        gap: 24px;
+    }
+
+    @include sm {
+        gap: 44px;
+    }
+
+    @include md{
+        height: 30%;
+    }
+
+    @include xl{
+        gap: 64px;
+
+    }
+
+    .text{
+        width: 624px;
+        height: 130px;
+        font-weight: 600;
+        font-size: 56px;
+
+        @include xs{
+            width: 288px;
+            height: 74px;
+            font-size: 32px;
+            text-align: center;
+        }
+
+        @include sm{
+            font-size: 38px;
+            width: 320px;
+            text-align: center;
+        }
+
+        @include md{
+
+        }
+
+        @include xl{
+            width: 100%;
+            font-size: 42px;
+            text-align: start;
+        }
+
+        @include xxl{
+            font-size: 56px;
+            width: 624px;
+        }
+    }
+}
+

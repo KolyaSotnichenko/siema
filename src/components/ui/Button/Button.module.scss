@@ -1,0 +1,47 @@
+@import "../../../styles/_mixins.scss";
+
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 296px;
+    height: 64px;
+    background: #1E6A8E;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 20px;
+    color: white;
+
+    &:hover{
+        background: #3891B1;
+        transition: all 0.3s ease-in;
+    }
+
+    &:active{
+        background: #003B63;
+        transition: all 0.1s ease-in;
+    }
+
+    @include xs{
+        font-size: 14px;
+        height: 48px;
+        position: absolute;
+        bottom: 80px;
+    }
+
+    @include sm{
+        position: absolute;
+        bottom: 160px;
+    }
+
+    @include xl{
+        position: static;
+        height: 64px;
+        font-size: 20px;
+    }
+
+    @include xxl{
+        bottom: 30%;
+    }
+}

@@ -1,0 +1,151 @@
+@import "../../../styles/_mixins.scss";
+
+.btn {
+  height: 72px;
+  width: 405px;
+  position: relative;
+  z-index: 2;
+  color: #004974;
+  &:hover{
+    cursor: pointer;
+    & svg{
+      path{
+        stroke: #1E6A8E;
+      }
+    }
+
+    &::before, &::after{
+      background-color: #1E6A8E
+    }
+  }
+
+  &::after{
+    content: '';
+    object-fit: cover;
+    left: 0;
+    position: absolute;
+    top: 36px;
+    width: 100%;
+    height: 1px;
+    background-color: #D0D0D8;
+    z-index: -1;
+  }
+
+  &::before{
+    content: '';
+    object-fit: cover;
+    right: 0;
+    position: absolute;
+    top: 36px;
+    width: 100%;
+    height: 1px;
+    background-color: #D0D0D8;
+    z-index: -1;
+  }
+
+  @include xs{
+    width: 100%;
+  }
+
+  @include xxl{
+    width: 405px;
+  }
+}
+
+.selected{
+  & svg{
+    path{
+      fill: #FFF3EB;
+      stroke: #FF8B37;
+    }
+  }
+
+  &::before, &::after{
+    background-color: #FF8B37;
+  }
+}
+
+.correct{
+  & svg{
+    path{
+      fill: #E6FAEA;
+      stroke: #47D867;
+    }
+  }
+
+  &::before, &::after{
+    background-color: #47D867;
+  }
+}
+
+.wrong{
+  & svg{
+    path{
+      fill: #FDEEED;
+      stroke: #EC6259;
+    }
+  }
+
+  &::before, &::after{
+    background-color: #EC6259;
+  }
+}
+
+.border {
+  position: absolute;
+  left: 16px;
+  object-fit: cover;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @include xs{
+    width: 95%;
+  }
+}
+
+.content {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  left: 48px;
+  position: absolute;
+  top: 24px;
+  width: fit-content;
+
+  @include sm{
+    left: 30%;
+    gap: 20px;
+  }
+
+  @include md{
+    left: 48px;
+    gap: 8px;
+  }
+}
+
+.letterAnswer {
+  color: #3891B1;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 23.2px;
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: 16px;
+}
+
+.text {
+  color: #1b1b21;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 23.2px;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: 285px;
+}
